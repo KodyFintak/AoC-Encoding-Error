@@ -1,10 +1,8 @@
-# encoding-error
+# Advent of Code - Day 9 - Encoding Error
 
-A Clojure library designed to ... well, that part is up to you.
+Let's have fun solving day 9 of Advent of Code.
 
-## Usage
-
-FIXME
+https://adventofcode.com/2020/day/9
 
 ## License
 
