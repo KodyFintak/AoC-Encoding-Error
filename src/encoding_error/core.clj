@@ -1,6 +1,4 @@
 (ns encoding-error.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn add-1 [x]
+  (+ x 1))
