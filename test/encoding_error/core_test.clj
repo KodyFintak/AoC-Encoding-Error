@@ -8,6 +8,10 @@
 
 (def input-2 (concat one-through-25 `(26 537)))
 
+(deftest preamble-match-test
+  (testing "number given is invalid"
+    (is (= true (preamble-match one-through-25 1000)))))
+
 (deftest find-invalid-xmas-number-test
   (testing "26th number is invalid"
     (is (= 1000 (find-invalid-xmas-number input))))
