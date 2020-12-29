@@ -15,5 +15,5 @@
     (in? number valid-numbers)))
 
 (defn find-invalid-xmas-number [input]
-  (let [first-25 (take 25 input)]
-   1000))
+  (let [first-25 (take 25 input) next-number (nth input 25)]
+   (if (valid-with-preamble? first-25 next-number) nil next-number)))
