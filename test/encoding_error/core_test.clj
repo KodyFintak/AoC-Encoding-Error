@@ -4,10 +4,6 @@
 
 (def one-through-25 (range 1 26))
 
-(def input (concat one-through-25 `(1000)))
-
-(def input-2 (concat one-through-25 `(26 537)))
-
 (deftest valid-with-preamble-test
   (testing "number given is invalid"
     (is (= false (valid-with-preamble? one-through-25 1000))))
@@ -16,8 +12,11 @@
 
 (deftest find-invalid-xmas-number-test
   (testing "26th number is invalid"
-    (is (= 1000 (find-invalid-xmas-number input))))
+    (is (= 1000 (find-invalid-xmas-number (concat one-through-25 `(1000))))))
   (testing "Can handle no preamble"
     (is (= nil (find-invalid-xmas-number '(1 2)))))
   (testing "27th number is invalid"
-    (is (= 537 (find-invalid-xmas-number input-2)))))
+    (is (= 537 (find-invalid-xmas-number (concat one-through-25 `(26 537))))))
+  (testing "Finds first invalid number"
+    (is (= 1000 (find-invalid-xmas-number (concat one-through-25 `(1000 10001))))))
+  )
