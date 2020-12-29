@@ -10,7 +10,9 @@
 
 (deftest preamble-match-test
   (testing "number given is invalid"
-    (is (= false (preamble-match one-through-25 1000)))))
+    (is (= false (preamble-match one-through-25 1000))))
+  (testing "number given is valid"
+    (is (= true (preamble-match one-through-25 26)))))
 
 (deftest find-invalid-xmas-number-test
   (testing "26th number is invalid"
