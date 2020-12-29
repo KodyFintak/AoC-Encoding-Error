@@ -2,6 +2,10 @@
   (:require [clojure.test :refer :all]
             [encoding-error.core :refer :all]))
 
-(deftest add-1-test
-  (testing "Making sure we can call src"
-    (is (= (add-1 2) 3))))
+(def one-through-25 (range 1 26))
+
+(def input (concat one-through-25 `(1000)))
+
+(deftest find-invalid-xmas-number-test
+  (testing "26th number is invalid"
+    (is (= 1000 (find-invalid-xmas-number input)))))

@@ -1,4 +1,4 @@
 (ns encoding-error.core)
 
-(defn add-1 [x]
-  (+ x 1))
+
+(defn find-invalid-xmas-number [input] 1000)
