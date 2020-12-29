@@ -4,7 +4,7 @@
 
 (defn preamble-match [preamble number]
   (let [contra-preamble (map #(Math/abs (- % number)) preamble)]
-    (print contra-preamble)))
+    (not= (count (distinct contra-preamble)) (count contra-preamble))))
 
 (defn find-invalid-xmas-number [input]
   (let [first-25 (take 25 input)]
