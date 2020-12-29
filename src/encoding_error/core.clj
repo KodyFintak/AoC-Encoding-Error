@@ -1,12 +1,5 @@
 (ns encoding-error.core)
 
-;; number - preamble-number
-;; (1...25) , 26 ........
-;; contra-preamble = (25, 1)
-;;
-;;
-;;
-
 (defn all-pairs [coll]
   (let [x (first coll) xs (next coll)]
     (when xs
@@ -14,9 +7,12 @@
        (map (fn [y] [x y]) xs)
        (all-pairs xs)))))
 
+(defn in? [number coll]
+  (not= nil (some #{number} coll)))
+
 (defn preamble-match [preamble number]
   (let [valid-numbers (map #(reduce + %) (all-pairs preamble))]
-    (not= nil (some #{number} valid-numbers))))
+    (in? number valid-numbers)))
 
 (defn find-invalid-xmas-number [input]
   (let [first-25 (take 25 input)]
