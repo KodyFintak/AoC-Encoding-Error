@@ -10,7 +10,7 @@
 (defn in? [number coll]
   (not= nil (some #{number} coll)))
 
-(defn preamble-match [preamble number]
+(defn valid-with-preamble? [preamble number]
   (let [valid-numbers (map #(reduce + %) (all-pairs preamble))]
     (in? number valid-numbers)))
 

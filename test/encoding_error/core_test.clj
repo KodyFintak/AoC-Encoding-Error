@@ -8,11 +8,11 @@
 
 (def input-2 (concat one-through-25 `(26 537)))
 
-(deftest preamble-match-test
+(deftest valid-with-preamble-test
   (testing "number given is invalid"
-    (is (= false (preamble-match one-through-25 1000))))
+    (is (= false (valid-with-preamble? one-through-25 1000))))
   (testing "number given is valid"
-    (is (= true (preamble-match one-through-25 26)))))
+    (is (= true (valid-with-preamble? one-through-25 26)))))
 
 (deftest find-invalid-xmas-number-test
   (testing "26th number is invalid"
