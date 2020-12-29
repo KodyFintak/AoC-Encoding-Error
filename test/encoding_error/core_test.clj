@@ -17,5 +17,7 @@
 (deftest find-invalid-xmas-number-test
   (testing "26th number is invalid"
     (is (= 1000 (find-invalid-xmas-number input))))
+  (testing "Can handle no preamble"
+    (is (= nil (find-invalid-xmas-number '(1 2)))))
   (testing "27th number is invalid"
     (is (= 537 (find-invalid-xmas-number input-2)))))
